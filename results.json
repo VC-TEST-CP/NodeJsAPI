@@ -1,0 +1,88 @@
+{
+   "_links": {
+      "root": {
+         "href": "/",
+         "name": "",
+         "templated": false
+      },
+      "self": {
+         "href": "/scans/902ca7ec-027b-498c-b2fa-932d271b2bde/findings",
+         "name": "",
+         "templated": false
+      },
+      "help": {
+         "href": "https://help.veracode.com/reader/tS9CaFwL4_lbIEWWomsJoA/ovfZGgu96UINQxIuTqRDwg",
+         "name": "",
+         "templated": false
+      },
+      "create": {
+         "href": "",
+         "name": "",
+         "templated": false
+      },
+      "start": {
+         "href": "",
+         "name": "",
+         "templated": false
+      },
+      "details": {
+         "href": "",
+         "name": "",
+         "templated": false
+      },
+      "upload": {
+         "href": "",
+         "name": "",
+         "templated": false
+      },
+      "cancel": {
+         "href": "",
+         "name": "",
+         "templated": false
+      }
+   },
+   "scan_id": "902ca7ec-027b-498c-b2fa-932d271b2bde",
+   "scan_status": "SUCCESS",
+   "message": "Scan successful. Results size: 1701 bytes",
+   "modules": [
+      "JS files within server5.zip"
+   ],
+   "modules_count": 1,
+   "findings": [
+      {
+         "title": "!js_template_sql",
+         "issue_id": 1000,
+         "gob": "B",
+         "severity": 4,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+         "cwe_id": "89",
+         "display_text": "\u003cspan\u003eThis database query contains a SQL injection flaw.  The call to !js_template_sql() constructs a dynamic SQL query using a variable derived from untrusted input.  An attacker could exploit this flaw to execute arbitrary SQL queries against the database. \u003c/span\u003e \u003cspan\u003eAvoid dynamically constructing SQL queries.  Instead, use parameterized prepared statements to prevent the database from interpreting the contents of bind variables as part of the query.  Always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/89.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/SQL_Injection\"\u003eOWASP\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "server.js",
+               "line": 30,
+               "function_name": "lambda_6",
+               "qualified_function_name": "lambda_6",
+               "function_prototype": "lambda_6(: any,  : express::Request,  : express::Response, ...) : any",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "2789546570",
+            "prototype_hash": "2370420884",
+            "flaw_hash": "636958489",
+            "flaw_hash_count": 1,
+            "flaw_hash_ordinal": 1,
+            "cause_hash": "964336234",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "4284885398",
+            "cause_hash2_ordinal": "1"
+         },
+         "stack_dumps": {},
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/89.html"
+      }
+   ],
+   "selected_modules": []
+}
